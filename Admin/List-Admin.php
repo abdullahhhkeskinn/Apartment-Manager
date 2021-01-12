@@ -35,13 +35,14 @@
                   <th scope="col">Mail</th>
                   <th scope="col">Phone Number</th>
                   <th scope="col">Flat Number</th>
-                  <th scope="col">Debt</th>
                   <th scope="col">#</th>
                 </tr>
               </thead>
 
               <?php
-              $result = mysqli_query($conn, "SELECT * FROM users ORDER BY flatNo ASC");
+              $result = mysqli_query($conn, "SELECT * FROM users");
+              $result2 =mysqli_query($conn, "SELECT apartmentNum FROM users_flat, users WHERE users.userId = users_flat.userId");
+              $results2 = mysqli_fetch_array($result2);
 
               if (mysqli_num_rows($result) > 0) {
                 while ($results = mysqli_fetch_array($result)) {
@@ -55,15 +56,14 @@
                   echo "<td>" . $results['ssn'] . "</td>";
                   echo "<td>" . $results['mail'] . "</td>";
                   echo "<td>" . $results['phoneNo'] . "</td>";
-                  echo "<td>" . $results['flatNo'] . "</td>";
-                  echo "<td>" . mysqli_fetch_array(mysqli_query($conn, "SELECT debt FROM apartment,users WHERE flatNo = apartmentNum"))['debt'] . "</td>";
+                  echo "<td>" . $results2['apartmentNum'] . "</td>";
                   
               ?>
                   <td>
                     <div class="container">
                       <div class="row">
                         <div class="col6">
-                          <a href="Php/Delete-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a>
+                          <a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a>
                         </div>
                         <div class="col-6">
                           <a href="Update-Admin.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Update</button></a>
@@ -77,35 +77,7 @@
                 }
               }
               ?>
-              <?php
-              $result2 = mysqli_query($conn, "SELECT * FROM nonuser ORDER BY apartmentNum ASC");
-              if (mysqli_num_rows($result2) > 0) {
-                while ($results2 = mysqli_fetch_array($result2)) {
-                  echo
-                    "<tbody>
-                    <tr>
-                      <td></td>
-                      <td>" . $results2['fname'] . "</td>
-                      <td>" . $results2['surname'] . "</td>
-                      <td>" . $results2['dob'] . "</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>" . $results2['apartmentNum'] . "</td> 
-                      <td></td>
-                      ";
-                    ?>
-                  <td><a href="Php/Delete-NonUser.php?userId=<?php echo $results2['nonUserId'] ?>"><button type='button' class='btn btn-light'>Delete</button></a></td>
-                  <?php
-                    echo"</tr>
-                  </tbody>";
-                }
-              }
-              ?>
-
               <hr>
-              
-              
             </table>
           </div>
         </div>
