@@ -26,12 +26,10 @@
             <table class="table table-stripped">
               <thead class="thead-light">
                 <tr>
-
                   <th scope="col">Username</th>
                   <th scope="col">Name</th>
                   <th scope="col">Surname</th>
                   <th scope="col">Date of Birth</th>
-                  <th scope="col">Social Security Number</th>
                   <th scope="col">Mail</th>
                   <th scope="col">Phone Number</th>
                   <th scope="col">Flat Number</th>
@@ -40,9 +38,7 @@
               </thead>
 
               <?php
-              $result = mysqli_query($conn, "SELECT * FROM users");
-              $result2 =mysqli_query($conn, "SELECT apartmentNum FROM users_flat, users WHERE users.userId = users_flat.userId");
-              $results2 = mysqli_fetch_array($result2);
+              $result = mysqli_query($conn, "SELECT * FROM `users` INNER JOIN user_flat USING (userId) WHERE isMoved = 0");
 
               if (mysqli_num_rows($result) > 0) {
                 while ($results = mysqli_fetch_array($result)) {
@@ -53,7 +49,6 @@
                   echo "<td>" . $results['fname'] . "</td>";
                   echo "<td>" . $results['surname'] . "</td>";
                   echo "<td>" . $results['dob'] . "</td>";
-                  echo "<td>" . $results['ssn'] . "</td>";
                   echo "<td>" . $results['mail'] . "</td>";
                   echo "<td>" . $results['phoneNo'] . "</td>";
                   echo "<td>" . $results2['apartmentNum'] . "</td>";
