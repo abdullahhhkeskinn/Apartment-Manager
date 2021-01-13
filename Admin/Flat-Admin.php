@@ -8,7 +8,7 @@
 
   <title>Apartment Manager Register</title>
   <?php require("../Php-Connection.php") ?>
-  
+
 </head>
 
 <body>
@@ -39,16 +39,13 @@
             <table class="table table-stripped">
               <thead class="thead-light">
                 <tr>
-                  
                   <th scope="col">Username</th>
                   <th scope="col">Name</th>
                   <th scope="col">Surname</th>
                   <th scope="col">Date of Birth</th>
-                  <th scope="col">Social Security Number</th>
                   <th scope="col">Mail</th>
                   <th scope="col">Phone Number</th>
                   <th scope="col">Flat Number</th>
-                  <th scope="col">Debt</th>
                   <th scope="col">#</th>
                 </tr>
               </thead>
@@ -59,29 +56,28 @@
               $int = intval($arr[1]);
               $result = mysqli_query($conn, "SELECT * FROM users WHERE flatno = $int");
               ?>
+
               <?php
-              $result = mysqli_query($conn, "SELECT * FROM users WHERE flatNo= '$int' ORDER BY flatNo ASC");
-              
+              $result = mysqli_query($conn, "SELECT * FROM `users` INNER JOIN user_flat USING (userId) WHERE isMoved = 0 AND user_flat.apartmentNum = '$int'");
+
               if (mysqli_num_rows($result) > 0) {
                 while ($results = mysqli_fetch_array($result)) {
                   echo
-                    "<tbody>
-                    <tr> ";
-                      echo "<td>" . $results['username'] . "</td>";
-                      echo "<td>" . $results['fname'] . "</td>";
-                      echo "<td>" . $results['surname'] . "</td>";
-                      echo "<td>" . $results['dob'] . "</td>";
-                      echo "<td>" . $results['ssn'] . "</td>";
-                      echo "<td>" . $results['mail'] . "</td>";
-                      echo "<td>" . $results['phoneNo'] . "</td>";
-                      echo "<td>" . $results['flatNo'] . "</td>";
-                      echo "<td>" . mysqli_fetch_array(mysqli_query($conn, "SELECT debt FROM apartment,users WHERE flatNo = apartmentNum"))['debt'] . "</td>";
-                      ?>
-                       <td>
+                  "<tbody>
+                  <tr> ";
+                  echo "<td>" . $results['username'] . "</td>";
+                  echo "<td>" . $results['fname'] . "</td>";
+                  echo "<td>" . $results['surname'] . "</td>";
+                  echo "<td>" . $results['dob'] . "</td>";
+                  echo "<td>" . $results['mail'] . "</td>";
+                  echo "<td>" . $results['phoneNo'] . "</td>";
+                  echo "<td>" . $results['apartmentNum'] . "</td>";
+              ?>
+                  <td>
                     <div class="container">
-                      <div class="row">
+                      <div class="row justify-content-around">
                         <div class="col6">
-                          <a href="Php/Delete-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a>
+                          <a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a>
                         </div>
                         <div class="col-6">
                           <a href="Update-Admin.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Update</button></a>
@@ -89,37 +85,13 @@
                       </div>
                     </div>
                   </td>
-                      <?php
-                    echo "</tr>
-                  </tbody>";
-                  
-                }
-              }
-              ?>
               <?php
-              $result2 = mysqli_query($conn, "SELECT * FROM nonuser WHERE apartmentNum= '$int' ORDER BY apartmentNum ASC");
-              if (mysqli_num_rows($result2) > 0) {
-                while ($results2 = mysqli_fetch_array($result2)) {
-                  echo
-                    "<tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>" . $results2['fname'] . "</td>
-                      <td>" . $results2['surname'] . "</td>
-                      <td>" . $results2['dob'] . "</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>" . $results2['apartmentNum'] . "</td>";?>
-                      <td><a href="Php/Delete-NonUser.php?userId=<?php echo $results2['nonUserId'] ?>"><button type='button' class='btn btn-light'>Delete</button></a></td>
-                      <?php
-                      echo
-                    "</tr>
-                  </tbody>";
+                  echo "</tr>
+                    </tbody>";
                 }
               }
               ?>
+              <hr>
             </table>
           </div>
         </div>
