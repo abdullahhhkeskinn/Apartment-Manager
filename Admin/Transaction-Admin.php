@@ -37,18 +37,6 @@
                   </div>
                   <button style="margin-top: 1%" class="btn btn-primary" name="dueSubmit" type="submit">Add Due to All</button>
                 </form>
-
-                <form style="margin-top: 3%" method="post" action="Php/Add-Due.php">
-                  <div class="form-group">
-                    <label for="debt">Change Debt of an Flat</label>
-                    <input type="number" name="debt" class="form-control" placeholder="Debt" aria-label="debt" aria-describedby="basic-addon1">
-                  </div>
-                  <div class="form-group">
-                    <input style="margin-top: 3%" type="number" name="flatNo" class="form-control" placeholder="Flat Number" aria-label="flatNo" aria-describedby="basic-addon1" min="1" max="10">
-                  </div>
-                  <button style="margin-top: 1%" class="btn btn-primary" name="debtSubmit" type="submit">Change Debt of the Flat</button>
-                </form>
-
               </div>
             </div>
           </div>
