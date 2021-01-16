@@ -25,7 +25,7 @@ body {
           <a class="nav-link" href="Register-Admin.php">Register User</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Transaction-Admin.php">Transactions</a>
+          <a class="nav-link" href="Transaction-Admin.php">Expenses and Dues</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
