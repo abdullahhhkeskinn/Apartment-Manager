@@ -19,7 +19,7 @@ body {
           <a class="nav-link" href="Home-Admin.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="List-Admin.php">Lists</a>
+          <a class="nav-link" href="List-Admin.php">List of Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Register-Admin.php">Register User</a>

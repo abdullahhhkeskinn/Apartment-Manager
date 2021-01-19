@@ -23,9 +23,8 @@
       <div class="col-1"> </div>
       
       <div style="background-color: rgb(201, 181, 212); height: 100%; padding-bottom: 3%;" class="col-10">
-        <div class="col-1"></div>
 
-        <div style="background-color:white; margin-top:3%; margin-left:25%" class="col-6">
+        <div style="background-color:white; margin-top:3%; " class="col-12">
           <div class="row justify-content-around">
             <div class="col-3"></div>
 
@@ -93,8 +92,7 @@
                 </form>
               </div>
             </div>
-
-            <div class="col-3"></div>
+            
           </div>
         </div>
       </div>

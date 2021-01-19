@@ -24,7 +24,7 @@
     $result = mysqli_query($conn, "SELECT * FROM users WHERE userId = '$int' ");
     $results = mysqli_fetch_array($result);
     ?>
-    
+
 
     <div class="container-fluid">
         <div class="row justify-content-around">
@@ -43,82 +43,161 @@
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
                                 <div class="row justify-content-around">
-                                    <div style="background-color: white; margin-top: 2%; padding:3%" class="col-10">
-                                        <form method="post" action="Php/Update-User.php">
+                                    <div style="background-color: white;  padding:3%" class="col-10">
+                                        <form style="margin-left:30%" method="post" action="Php/Register-User.php">
                                             <div class="form-row">
 
-                                                <div class="col-4">
+                                                <div class="col-7">
                                                     <label for="name">First name</label>
-                                                    <input type="text" class="form-control" name="name" placeholder="First name" value ="<?php echo $results['fname'] ?>" required>
+                                                    <input type="text" class="form-control" name="name" placeholder="First name" required>
                                                 </div>
 
-                                                <div class="col-4">
-                                                    <label for="surname">Last name</label>
-                                                    <input type="text" class="form-control" name="surname" placeholder="Last name" value = "<?php echo $results['surname'] ?>" required>
+                                                <div class="col-7">
+                                                    <label style="margin-top:3%" for="surname">Last name</label>
+                                                    <input type="text" class="form-control" name="surname" placeholder="Last name" required>
                                                 </div>
 
-                                                <div class="col-4">
-                                                    <label for="dob">Date of Birth</label>
-                                                    <input type="date" class="form-control" name="dob" placeholder="Date of Birth" value = "<?php echo $results['dob'] ?>" required>
+                                                <div class="col-7">
+                                                    <label style="margin-top:3%" for="dob">Date of Birth</label>
+                                                    <input type="date" class="form-control" name="dob" placeholder="Date of Birth" required>
                                                 </div>
 
-                                            </div>
 
-                                            <div style="margin-top: 2%;" class="form-row">
-                                                <div class="col-6">
+                                                <div class="col-7">
                                                     <label for="email">Email</label>
-                                                    <input type="email" class="form-control" name="email" placeholder="placeholder@gmail.com" value = "<?php echo $results['mail'] ?>" required>
+                                                    <input type="email" class="form-control" name="email" placeholder="placeholder@gmail.com" required>
                                                 </div>
 
-                                                <div class="col-3">
+                                                <div class="col-7">
                                                     <label for="username">Username</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" name="inputGroupPrepend2">@</span>
                                                         </div>
-                                                        <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="inputGroupPrepend2" value = "<?php echo $results['username'] ?>" required>
+                                                        <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-3">
+                                                <div class="col-7">
                                                     <label for="pass">Password</label>
-                                                    <input type="text" class="form-control" name="pass" placeholder="Enter Old or New Password"  required>
+                                                    <input type="password" class="form-control" name="pass" placeholder="Password" required>
                                                 </div>
 
-                                            </div>
 
-                                            <div style="margin-top: 2%;" class="form-row">
-                                                <div class="col-4">
-                                                    <label for="ssn">Social Security Number</label>
-                                                    <input type="text" class="form-control" name="ssn" placeholder="Social Security Number" maxlength="11" value = "<?php echo $results['ssn'] ?>" required>
-                                                </div>
-
-                                                <div class="col-4">
+                                                <div class="col-7">
                                                     <label for="phoneNum">Phone Number</label>
-                                                    <input type="tel" class="form-control" name="phoneNum" placeholder="Phone Number" maxlength="11" value = "<?php echo $results['phoneNo'] ?>" required>
+                                                    <input type="tel" class="form-control" name="phoneNum" placeholder="Phone Number" maxlength="11" required>
                                                 </div>
 
-                                                <div class="col-4">
+                                                <div class="col-7">
                                                     <label for="flatNo">Flat Number</label>
-                                                    <input type="number" class="form-control" name="flatNo" placeholder="Flat Number" min="1" max="10" value = "<?php echo $results['flatNo'] ?>" required>
+                                                    <input type="number" class="form-control" name="flatNo" placeholder="Flat Number" min="1" max="10" required>
                                                 </div>
 
-                                            </div>
-
-                                            <div style="margin-top: 2%;" class="form-row">
-                                                <div class="col-4">
+                                                <div class="col-7">
                                                     <label for="admin">Admin Status</label>
-                                                    <input type="number" class="form-control" name="admin" placeholder="0 for normal user 1 for Admin" min="0" max="1" value = "<?php echo $results['isAdmin'] ?>" required>
+                                                    <input type="number" class="form-control" name="admin" placeholder="0 for normal user 1 for Admin" min="0" max="1" required>
                                                 </div>
                                             </div>
-
-                                            <div style="margin-top: 2%;" class="form-row">
-                                                <div class="col-4">
-                                                    <input style="display: none;" type="text" class="form-control" name="userId" value = "<?php echo $results['userId'] ?>" required>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary" name="userSubmit" type="submit">Submit form</button>
+                                            <hr>
+                                            <button style="margin-right:40%; margin-bottom:3%" class="btn btn-primary" name="userSubmit" type="submit">Submit form</button>
                                         </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Unpaid Dues and Expenses
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="row justify-content-around">
+                                    <div style="background-color: white; margin-top: 2%; padding:3%" class="col-10">
+                                        <table class="table table-stripped">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th scope="col">Due-Expense ID</th>
+                                                    <th scope="col">Due-Expense Date</th>
+                                                    <th scope="col">Fee</th>
+                                                    <th scope="col">#</th>
+                                                </tr>
+                                            </thead>
+
+                                            <?php
+                                            $result = mysqli_query($conn, "SELECT * FROM `users` INNER JOIN user_flat USING (userId) WHERE isMoved = 0");
+
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while ($results = mysqli_fetch_array($result)) {
+                                                    echo
+                                                    "<tbody> <tr> ";
+                                                    echo "<td>" . $results['username'] . "</td>";
+                                                    echo "<td>" . $results['fname'] . "</td>";
+                                                    echo "<td>" . $results['surname'] . "</td>";
+
+                                            ?>
+                                                    <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a></td>
+                                            <?php
+                                                    echo "</tr></tbody>";
+                                                }
+                                            }
+                                            ?>
+                                            <hr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Paid Dues and Expenses
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="row justify-content-around">
+                                    <div style="background-color: white; margin-top: 2%; padding:3%" class="col-10">
+                                        <table class="table table-stripped">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th scope="col">Due-Expense ID</th>
+                                                    <th scope="col">Due-Expense Date</th>
+                                                    <th scope="col">Fee</th>
+                                                    <th scope="col">#</th>
+                                                </tr>
+                                            </thead>
+
+                                            <?php
+                                            $result = mysqli_query($conn, "SELECT * FROM `users` INNER JOIN user_flat USING (userId) WHERE isMoved = 0");
+
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while ($results = mysqli_fetch_array($result)) {
+                                                    echo
+                                                    "<tbody> <tr> ";
+                                                    echo "<td>" . $results['username'] . "</td>";
+                                                    echo "<td>" . $results['fname'] . "</td>";
+                                                    echo "<td>" . $results['surname'] . "</td>";
+
+                                            ?>
+                                                    <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a></td>
+                                            <?php
+                                                    echo "</tr></tbody>";
+                                                }
+                                            }
+                                            ?>
+                                            <hr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
