@@ -123,6 +123,7 @@
                                         <table class="table table-stripped">
                                             <thead class="thead-light">
                                                 <tr>
+                                                    <th scope="col">Type</th>
                                                     <th scope="col">Due-Expense Detail</th>
                                                     <th scope="col">Due-Expense Date</th>
                                                     <th scope="col">Fee</th>
@@ -137,6 +138,7 @@
                                                     while ($results = mysqli_fetch_array($result)) {
                                                         echo
                                                         "<tbody> <tr> ";
+                                                        echo "<td> DUE </td>";
                                                         echo "<td>" . $results['dueDetail'] . "</td>";
                                                         echo "<td>" . $results['dueDate'] . "</td>";
                                                         echo "<td>" . $results['fee'] . "</td>";
@@ -155,6 +157,7 @@
                                                     while ($results = mysqli_fetch_array($result)) {
                                                         echo
                                                         "<tbody> <tr> ";
+                                                        echo "<td> EXPENSE </td>";
                                                         echo "<td>" . $results['expenseDetail'] . "</td>";
                                                         echo "<td>" . $results['expenseDate'] . "</td>";
                                                         echo "<td>" . $results['fee'] . "</td>"; ?>
