@@ -143,7 +143,7 @@
                                                     echo "<td>" . $results['dueDate'] . "</td>";
                                                     echo "<td>" . $results['fee'] . "</td>";
                                             ?>
-                                                    <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-primary'>Pay</button></a></td>
+                                                    <td><a href="Php/Pay_Due.php?userId=<?php echo $results['userId'] ?>&dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Pay</button></a></td>
                                             <?php
                                                     echo "</tr></tbody>";
                                                 }
@@ -161,7 +161,7 @@
                                                     echo "<td>" . $results['expenseDetail'] . "</td>";
                                                     echo "<td>" . $results['expenseDate'] . "</td>";
                                                     echo "<td>" . $results['fee'] . "</td>"; ?>
-                                                    <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a></td>
+                                                    <td><a href="Php/Pay_Expense.php?userId=<?php echo $results['userId'] ?>&expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Pay</button></a></td>
                                             <?php
                                                     echo "</tr></tbody>";
                                                 }

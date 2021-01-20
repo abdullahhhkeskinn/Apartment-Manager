@@ -3,5 +3,5 @@
 
     $userID=$_GET['userId'];
     $deleteQuery = mysqli_query($conn, "UPDATE users SET isMoved = 1 ");
-    header('location: ../List-Admin.php');  
+    header("location: ../Update-Admin.php?userId= '$userID'");  
 ?>
