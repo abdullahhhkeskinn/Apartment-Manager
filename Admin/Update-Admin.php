@@ -49,23 +49,23 @@
 
                                                 <div class="col-7">
                                                     <label for="name">First name</label>
-                                                    <input type="text" class="form-control" name="name" placeholder="First name" value ="<?php echo $results['fname'] ?>"required>
+                                                    <input type="text" class="form-control" name="name" placeholder="First name" value="<?php echo $results['fname'] ?>" required>
                                                 </div>
 
                                                 <div class="col-7">
                                                     <label style="margin-top:3%" for="surname">Last name</label>
-                                                    <input type="text" class="form-control" name="surname" placeholder="Last name" value ="<?php echo $results['surname'] ?>" required>
+                                                    <input type="text" class="form-control" name="surname" placeholder="Last name" value="<?php echo $results['surname'] ?>" required>
                                                 </div>
 
                                                 <div class="col-7">
                                                     <label style="margin-top:3%" for="dob">Date of Birth</label>
-                                                    <input type="date" class="form-control" name="dob" placeholder="Date of Birth"  value ="<?php echo $results['dob'] ?>" required>
+                                                    <input type="date" class="form-control" name="dob" placeholder="Date of Birth" value="<?php echo $results['dob'] ?>" required>
                                                 </div>
 
 
                                                 <div class="col-7">
                                                     <label for="email">Email</label>
-                                                    <input type="email" class="form-control" name="email" placeholder="placeholder@gmail.com" value ="<?php echo $results['mail'] ?>" required>
+                                                    <input type="email" class="form-control" name="email" placeholder="placeholder@gmail.com" value="<?php echo $results['mail'] ?>" required>
                                                 </div>
 
                                                 <div class="col-7">
@@ -74,29 +74,29 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" name="inputGroupPrepend2">@</span>
                                                         </div>
-                                                        <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="inputGroupPrepend2" value ="<?php echo $results['username'] ?>" required>
+                                                        <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="inputGroupPrepend2" value="<?php echo $results['username'] ?>" required>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-7">
                                                     <label for="pass">Password</label>
-                                                    <input type="password" class="form-control" name="pass" placeholder="Please enter old or new Password"  required>
+                                                    <input type="password" class="form-control" name="pass" placeholder="Please enter old or new Password" required>
                                                 </div>
 
 
                                                 <div class="col-7">
                                                     <label for="phoneNum">Phone Number</label>
-                                                    <input type="tel" class="form-control" name="phoneNum" placeholder="Phone Number" maxlength="11" value ="<?php echo $results['phoneNo'] ?>" required>
+                                                    <input type="tel" class="form-control" name="phoneNum" placeholder="Phone Number" maxlength="11" value="<?php echo $results['phoneNo'] ?>" required>
                                                 </div>
 
                                                 <div class="col-7">
                                                     <label for="flatNo">Flat Number</label>
-                                                    <input type="number" class="form-control" name="flatNo" placeholder="Flat Number" min="1" max="10" value ="<?php echo $results['apartmentNum'] ?>" required>
+                                                    <input type="number" class="form-control" name="flatNo" placeholder="Flat Number" min="1" max="10" value="<?php echo $results['apartmentNum'] ?>" required>
                                                 </div>
 
                                                 <div class="col-7">
                                                     <label for="admin">Admin Status</label>
-                                                    <input type="number" class="form-control" name="admin" placeholder="0 for normal user 1 for Admin" min="0" max="1" value ="<?php echo $results['isAdmin'] ?>" required>
+                                                    <input type="number" class="form-control" name="admin" placeholder="0 for normal user 1 for Admin" min="0" max="1" value="<?php echo $results['isAdmin'] ?>" required>
                                                 </div>
                                             </div>
                                             <hr>
@@ -132,40 +132,40 @@
                                             </thead>
 
                                             <?php
-                                                $result = mysqli_query($conn, "SELECT * FROM `dues` INNER JOIN due_user_flat USING (dueId) WHERE userId = '$int' AND is_paid = 0");
+                                            $result = mysqli_query($conn, "SELECT * FROM `dues` INNER JOIN due_user_flat USING (dueId) WHERE userId = '$int' AND is_paid = 0");
 
-                                                if (mysqli_num_rows($result) > 0) {
-                                                    while ($results = mysqli_fetch_array($result)) {
-                                                        echo
-                                                        "<tbody> <tr> ";
-                                                        echo "<td> DUE </td>";
-                                                        echo "<td>" . $results['dueDetail'] . "</td>";
-                                                        echo "<td>" . $results['dueDate'] . "</td>";
-                                                        echo "<td>" . $results['fee'] . "</td>";
-                                                ?>
-                                                        <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a></td>
-                                                <?php
-                                                        echo "</tr></tbody>";
-                                                    }
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while ($results = mysqli_fetch_array($result)) {
+                                                    echo
+                                                    "<tbody> <tr> ";
+                                                    echo "<td> DUE </td>";
+                                                    echo "<td>" . $results['dueDetail'] . "</td>";
+                                                    echo "<td>" . $results['dueDate'] . "</td>";
+                                                    echo "<td>" . $results['fee'] . "</td>";
+                                            ?>
+                                                    <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-primary'>Pay</button></a></td>
+                                            <?php
+                                                    echo "</tr></tbody>";
                                                 }
+                                            }
                                             ?>
 
                                             <?php
-                                                $result = mysqli_query($conn, "SELECT * FROM `expenses` INNER JOIN expense_user_flat USING (expenseId) WHERE userId = '$int' AND is_paid = 0");
+                                            $result = mysqli_query($conn, "SELECT * FROM `expenses` INNER JOIN expense_user_flat USING (expenseId) WHERE userId = '$int' AND is_paid = 0");
 
-                                                if (mysqli_num_rows($result) > 0) {
-                                                    while ($results = mysqli_fetch_array($result)) {
-                                                        echo
-                                                        "<tbody> <tr> ";
-                                                        echo "<td> EXPENSE </td>";
-                                                        echo "<td>" . $results['expenseDetail'] . "</td>";
-                                                        echo "<td>" . $results['expenseDate'] . "</td>";
-                                                        echo "<td>" . $results['fee'] . "</td>"; ?>
-                                                        <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a></td>
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while ($results = mysqli_fetch_array($result)) {
+                                                    echo
+                                                    "<tbody> <tr> ";
+                                                    echo "<td> EXPENSE </td>";
+                                                    echo "<td>" . $results['expenseDetail'] . "</td>";
+                                                    echo "<td>" . $results['expenseDate'] . "</td>";
+                                                    echo "<td>" . $results['fee'] . "</td>"; ?>
+                                                    <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a></td>
                                             <?php
-                                                        echo "</tr></tbody>";
-                                                    }
-                                             }
+                                                    echo "</tr></tbody>";
+                                                }
+                                            }
                                             ?>
                                             <hr>
                                         </table>
@@ -190,27 +190,43 @@
                                         <table class="table table-stripped">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th scope="col">Due-Expense ID</th>
+                                                    <th scope="col">Type</th>
+                                                    <th scope="col">Due-Expense Detail</th>
                                                     <th scope="col">Due-Expense Date</th>
                                                     <th scope="col">Fee</th>
-                                                    <th scope="col">#</th>
+                                                    <th scope="col">Pay Date</th>
                                                 </tr>
                                             </thead>
 
                                             <?php
-                                            $result = mysqli_query($conn, "SELECT * FROM `users` INNER JOIN user_flat USING (userId) WHERE isMoved = 0");
+                                            $result = mysqli_query($conn, "SELECT * FROM `dues` INNER JOIN due_user_flat USING (dueId) WHERE userId = '$int' AND is_paid = 1");
 
                                             if (mysqli_num_rows($result) > 0) {
                                                 while ($results = mysqli_fetch_array($result)) {
                                                     echo
                                                     "<tbody> <tr> ";
-                                                    echo "<td>" . $results['username'] . "</td>";
-                                                    echo "<td>" . $results['fname'] . "</td>";
-                                                    echo "<td>" . $results['surname'] . "</td>";
-
+                                                    echo "<td> DUE </td>";
+                                                    echo "<td>" . $results['dueDetail'] . "</td>";
+                                                    echo "<td>" . $results['dueDate'] . "</td>";
+                                                    echo "<td>" . $results['fee'] . "</td>";
+                                                    echo "<td>" . $results['pay_date'] . "</td>";
+                                                    echo "</tr></tbody>";
+                                                }
+                                            }
                                             ?>
-                                                    <td><a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a></td>
+
                                             <?php
+                                            $result = mysqli_query($conn, "SELECT * FROM `expenses` INNER JOIN expense_user_flat USING (expenseId) WHERE userId = '$int' AND is_paid = 1");
+
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while ($results = mysqli_fetch_array($result)) {
+                                                    echo
+                                                    "<tbody> <tr> ";
+                                                    echo "<td> EXPENSE </td>";
+                                                    echo "<td>" . $results['expenseDetail'] . "</td>";
+                                                    echo "<td>" . $results['expenseDate'] . "</td>";
+                                                    echo "<td>" . $results['fee'] . "</td>"; 
+                                                    echo "<td>" . $results['pay_date'] . "</td>";
                                                     echo "</tr></tbody>";
                                                 }
                                             }

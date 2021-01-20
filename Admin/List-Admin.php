@@ -70,10 +70,10 @@
                             <div class="container">
                               <div class="row justify-content-around">
                                 <div class="col6">
-                                  <a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Move Out</button></a>
+                                  <a href="Php/moveOut-User.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-primary'>Move Out</button></a>
                                 </div>
                                 <div class="col-6">
-                                  <a href="Update-Admin.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-light'>Update</button></a>
+                                  <a href="Update-Admin.php?userId=<?php echo $results['userId'] ?>"><button type='button' class='btn btn-primary'>Update</button></a>
                                 </div>
                               </div>
                             </div>
