@@ -20,7 +20,7 @@ if(isset($_POST['userSubmit'])){
         echo("<script>window.location ='../Register-Admin.php';</script>");
     } else {
         $sql =  "INSERT INTO users (fname,surname,dob,ssn,username,pass,mail,phoneNo,flatNo,isAdmin) 
-                VALUES('$name','$surname','$dob','$ssn','$username','$md5_password','$email','$phoneNumber','$apartmentNo','$admin')";
+                VALUES('$name','$surname','$dob','$username','$md5_password','$email','$phoneNumber','$admin')";
 
         if (mysqli_query($conn, $sql)) {
             echo "<script type='text/javascript'>alert('User Succesfully Created');</script>";
