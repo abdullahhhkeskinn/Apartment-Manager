@@ -22,33 +22,41 @@
       <div style="background-color: rgb(201, 181, 212); height: 100%; padding-bottom: 3%" class="col-10">
         <div class="row justify-content-around">
           <div class="container-fluid">
-            <div class="row justify-content-center"> 
+            <div class="row justify-content-center">
               <div style="background-color: white; margin-top: 3%; padding:2%" class="col-8">
-
-                <form action="Php/Add-Due.php" method="post">
-                  <div class="form-group">
-                    <label for="due">Monthly Due</label>
-                    <input type="number" name="due" class="form-control" placeholder="Due value of an flat" aria-label="due" aria-describedby="basic-addon1" min="1">
-                  </div>
-                  <div class="form-group">
-                    <label for="AnnouncementTextArea">Due Details</label>
-                    <input type="text" class="form-control" name="textArea" placeholder="Enter Announcement" required>
-                  </div>
-                  <button style="margin-top: 1%" class="btn btn-primary" name="dueSubmit" type="submit">Add Due to All</button>
-                </form>
+                <div class="row justify-content-center">
+                  <?php require("Php/Chart-Admin.php") ?>
+                  
+                </div>
                 <hr>
-                <form action="Php/Add-Due.php" method="post">
-                  <div class="form-group">
-                    <label for="due">Expense</label>
-                    <input type="number" name="due" class="form-control" placeholder="Expense price per person" aria-label="due" aria-describedby="basic-addon1" min="1">
+                <div class="row justify-content-center">
+                  <div class="col-6">
+                    <form action="Php/Add-Due.php" method="post">
+                      <div class="form-group">
+                        <label for="due">Monthly Due</label>
+                        <input type="number" name="due" class="form-control" placeholder="Due value of an flat" aria-label="due" aria-describedby="basic-addon1" min="1">
+                      </div>
+                      <div class="form-group">
+                        <label for="AnnouncementTextArea">Due Details</label>
+                        <input type="text" class="form-control" name="textArea" placeholder="Enter Announcement" required>
+                      </div>
+                      <button style="margin-top: 1%" class="btn btn-primary" name="dueSubmit" type="submit">Add Due to All</button>
+                    </form>
                   </div>
-                  <div class="form-group">
-                    <label for="AnnouncementTextArea">Expense Details</label>
-                    <input type="text" class="form-control" name="textArea" placeholder="Enter Announcement" required>
+                  <div class="col-6">
+                    <form action="Php/Add-Due.php" method="post">
+                      <div class="form-group">
+                        <label for="due">Expense</label>
+                        <input type="number" name="due" class="form-control" placeholder="Expense price per person" aria-label="due" aria-describedby="basic-addon1" min="1">
+                      </div>
+                      <div class="form-group">
+                        <label for="AnnouncementTextArea">Expense Details</label>
+                        <input type="text" class="form-control" name="textArea" placeholder="Enter Announcement" required>
+                      </div>
+                      <button style="margin-top: 1%" class="btn btn-primary" name="expenseSubmit" type="submit">Add Expense to All</button>
+                    </form>
                   </div>
-                  <button style="margin-top: 1%" class="btn btn-primary" name="expenseSubmit" type="submit">Add Due to All</button>
-                </form>
-
+                </div>
               </div>
             </div>
           </div>
