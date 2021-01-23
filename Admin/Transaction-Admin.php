@@ -23,13 +23,13 @@
         <div class="row justify-content-around">
           <div class="container-fluid">
             <div class="row justify-content-center">
-              <div style="background-color: white; margin-top: 3%; padding:2%" class="col-8">
+              <div style="background-color: white; margin-top: 3%; padding:2%" class="col-11">
                 <div class="row justify-content-center">
                   <?php require("Php/Chart-Admin.php") ?>
                   
                 </div>
                 <hr>
-                <div class="row justify-content-center">
+                <div style="margin-top: 5%;" class="row justify-content-center">
                   <div class="col-6">
                     <form action="Php/Add-Due.php" method="post">
                       <div class="form-group">
