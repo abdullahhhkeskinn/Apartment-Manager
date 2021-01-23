@@ -20,7 +20,7 @@
       <div class="col-1"> </div>
       <div style="background-color: rgb(201, 181, 212); height: 100%; padding-bottom: 3%;" class="col-10">
 
-        <div style="margin-top: 3%;" class="jumbotron">
+        <div style=" box-shadow: 5px 10px 15px #888888; margin:3%" class="jumbotron">
           <h1 class="display-4">Welcome to Our Apartment System</h1>
           <p class="lead">You can see all the announcements here </p>
           <hr class="my-4">

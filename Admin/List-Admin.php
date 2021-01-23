@@ -20,7 +20,7 @@
   <div class="container-fluid">
     <div class="row justify-content-around">
       <div class="col-1"> </div>
-      <div style="background-color: rgb(201, 181, 212); height: 100%; padding-bottom: 3%;" class="col-10">
+      <div style="background-color: rgb(201, 181, 212); height: 100%;min-height:900px; padding-bottom: 3%;" class="col-10">
         <div style="margin-top: 3%;" id="accordion">
           <div class="card">
             <div class="card-header" id="headingOne">
@@ -35,7 +35,7 @@
               <div class="card-body">
                 <div class="row justify-content-around">
                   <div style="background-color: white; margin-top: 2%; padding:3%" class="col-10">
-                    <table class="table table-stripped">
+                    <table style=" box-shadow: 5px 10px 15px #888888; margin-bottom:3%" class="table table-stripped">
                       <thead class="thead-light">
                         <tr>
                           <th scope="col">Username</th>
@@ -103,7 +103,7 @@
               <div class="card-body">
                 <div class="row justify-content-around">
                   <div style="background-color: white; margin-top: 2%; padding:3%" class="col-10">
-                    <table class="table table-stripped">
+                    <table style=" box-shadow: 5px 10px 15px #888888; margin-bottom:3%" class="table table-stripped">
                       <thead class="thead-light">
                         <tr>
                           <th scope="col">Username</th>

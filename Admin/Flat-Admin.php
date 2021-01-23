@@ -32,11 +32,11 @@
   <div class="container-fluid">
     <div class="row justify-content-around">
       <div class="col-1"> </div>
-      <div style="background-color: rgb(201, 181, 212); height: 100%; padding-bottom: 3%" class="col-10">
-        <div class="row justify-content-around" style="margin-top: 5%;">
-          <div style="background-color: white;" class="col-10">
-            <p style="font-size: medium; text-align:center;">Flat Info</p>
-            <table class="table table-stripped">
+      <div style="background-color: rgb(201, 181, 212); min-height:900px; height: 100%; padding-bottom: 3%" class="col-11">
+        <div class="row justify-content-around" style="margin-top: 2%;">
+          <div style="background-color: white;" class="col-11">
+            <p style="font-size: medium; text-align:center; margin:2%">Flat Info</p>
+            <table style=" box-shadow: 5px 10px 15px #888888; margin-bottom:3%" class="table table-stripped">
               <thead class="thead-light">
                 <tr>
                   <th scope="col">Username</th>
