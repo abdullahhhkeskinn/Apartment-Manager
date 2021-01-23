@@ -24,7 +24,7 @@
           <div class="container-fluid">
             <div class="row justify-content-center">
               <div style="background-color: white; margin-top: 3%; padding:2%" class="col-11">
-                <div class="row justify-content-center">
+                <div style=" box-shadow: 5px 10px 15px #888888; margin-bottom:3%" class="row justify-content-center">
                   <?php require("Php/Chart-Admin.php") ?>
                   
                 </div>
