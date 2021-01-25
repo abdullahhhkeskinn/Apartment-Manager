@@ -33,25 +33,25 @@
                   <div class="col-6">
                     <form action="Php/Add-Due.php" method="post">
                       <div class="form-group">
-                        <label for="due">Monthly Due</label>
+                        <label for="fee">Monthly Due</label>
                         <input type="number" name="due" class="form-control" placeholder="Due value of an flat" aria-label="due" aria-describedby="basic-addon1" min="1">
                       </div>
                       <div class="form-group">
                         <label for="AnnouncementTextArea">Due Details</label>
-                        <input type="text" class="form-control" name="textArea" placeholder="Enter Announcement" required>
+                        <input type="text" class="form-control" name="dueDetail" placeholder="Enter Announcement" required>
                       </div>
                       <button style="margin-top: 1%" class="btn btn-primary" name="dueSubmit" type="submit">Add Due to All</button>
                     </form>
                   </div>
                   <div class="col-6">
-                    <form action="Php/Add-Due.php" method="post">
+                    <form action="Php/Add-Expense.php" method="post">
                       <div class="form-group">
-                        <label for="due">Expense</label>
-                        <input type="number" name="due" class="form-control" placeholder="Expense price per person" aria-label="due" aria-describedby="basic-addon1" min="1">
+                        <label for="fee">Expense</label>
+                        <input type="number" name="expense" class="form-control" placeholder="Expense price per person" aria-label="due" aria-describedby="basic-addon1" min="1">
                       </div>
                       <div class="form-group">
                         <label for="AnnouncementTextArea">Expense Details</label>
-                        <input type="text" class="form-control" name="textArea" placeholder="Enter Announcement" required>
+                        <input type="text" class="form-control" name="expenseDetail" placeholder="Enter Announcement" required>
                       </div>
                       <button style="margin-top: 1%" class="btn btn-primary" name="expenseSubmit" type="submit">Add Expense to All</button>
                     </form>
