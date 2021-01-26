@@ -113,6 +113,7 @@
                           <th scope="col">Mail</th>
                           <th scope="col">Phone Number</th>
                           <th scope="col">Flat Number</th>
+                          <th scope="col">Move-Out Date</th>
                         </tr>
                       </thead>
 
@@ -131,6 +132,7 @@
                           echo "<td>" . $results['mail'] . "</td>";
                           echo "<td>" . $results['phoneNo'] . "</td>";
                           echo "<td>" . $results['apartmentNum'] . "</td>";
+                          echo "<td>" . $results['moveOutDate'] . "</td>";
                           echo "</tr>
                                       </tbody>";
                         }

@@ -2,49 +2,58 @@
 
 $paid_dues = 0;
 $paid_expenses = 0;
-$all_expenses = 0;
+$unpaid_expenses = 0;
+$unpaid_dues = 0;
 
 $paid_dues_sql = "SELECT fee FROM due_user_flat INNER JOIN dues USING (dueId) WHERE is_paid = 1 AND MONTH(pay_date) = MONTH(CURRENT_DATE()) AND YEAR(pay_date) = YEAR(CURRENT_DATE()) ";
 $paid_expenses_sql = "SELECT fee FROM expense_user_flat INNER JOIN expenses USING (expenseId) WHERE is_paid = 1 AND MONTH(pay_date) = MONTH(CURRENT_DATE()) AND YEAR(pay_date) = YEAR(CURRENT_DATE()) ";
-$all_expense_fee_sql = "SELECT * FROM expense_user_flat  INNER JOIN expenses USING (expenseId) WHERE MONTH(expenseDate) = MONTH(CURRENT_DATE()) AND YEAR(expenseDate) = YEAR(CURRENT_DATE())";
+$unpaid_expense_fee_sql = "SELECT * FROM expense_user_flat  INNER JOIN expenses USING (expenseId) WHERE is_paid = 0 AND MONTH(expenseDate) = MONTH(CURRENT_DATE()) AND YEAR(expenseDate) = YEAR(CURRENT_DATE())";
+$unpaid_due_fee_sql = "SELECT * FROM due_user_flat  INNER JOIN dues USING (dueId) WHERE is_paid = 0 AND MONTH(dueDate) = MONTH(CURRENT_DATE()) AND YEAR(dueDate) = YEAR(CURRENT_DATE())";
 
-$sql_return = mysqli_query($conn,$paid_dues_sql);
+$sql_return = mysqli_query($conn, $paid_dues_sql);
 if (mysqli_num_rows($sql_return) > 0) {
 	while ($result = mysqli_fetch_array($sql_return)) {
 		$paid_dues += $result['fee'];
 	}
 }
 
-$sql_return = mysqli_query($conn,$paid_expenses_sql);
+$sql_return = mysqli_query($conn, $paid_expenses_sql);
 if (mysqli_num_rows($sql_return) > 0) {
 	while ($result = mysqli_fetch_array($sql_return)) {
 		$paid_expenses += $result['fee'];
 	}
 }
 
-$sql_return = mysqli_query($conn,$all_expense_fee_sql);
+$sql_return = mysqli_query($conn, $unpaid_expense_fee_sql);
 if (mysqli_num_rows($sql_return) > 0) {
 	while ($result = mysqli_fetch_array($sql_return)) {
-		$all_expenses += $result['fee'];
+	$unpaid_expenses += $result['fee'];
+	}
+}
+
+$sql_return = mysqli_query($conn, $unpaid_due_fee_sql);
+if (mysqli_num_rows($sql_return) > 0) {
+	while ($result = mysqli_fetch_array($sql_return)) {
+	$unpaid_dues += $result['fee'];
 	}
 }
 
 $dataPoints = array(
 	array("label" => "Paid Expenses",  "y" => $paid_expenses),
-	array("label" => "Paid Dues", "y" => $paid_dues ),
-	array("label" => "Total Revenue", "isIntermediateSum" => true),
-	array("label" => "Expenses", "y" => -$all_expenses),
-	array("label" => "Net Income",  "isCumulativeSum" => true)
+	array("label" => "Remaining Expenses", "y" => -$unpaid_expenses),	
+	array("label" => "Paid Dues", "y" => $paid_dues),
+	array("label" => "Remaining Dues", "y" => -$unpaid_dues),
+	array("label" => "Total Monthly Income", "y" => $paid_expenses + $paid_dues - ($unpaid_expenses + $unpaid_dues))
 );
 
 ?>
-<?php 
-	
-	$sname = "localhost";
-	$uname = "root";
-	$password = "";
-	$db_name = "apartmentmanager";
-	$conn  = mysqli_connect($sname, $uname, $password, $db_name);
+<?php
+
+$sname = "localhost";
+$uname = "root";
+$password = "";
+$db_name = "apartmentmanager";
+$conn  = mysqli_connect($sname, $uname, $password, $db_name);
 ?>
 <!DOCTYPE HTML>
 <html>

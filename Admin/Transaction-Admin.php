@@ -81,7 +81,10 @@
                         echo "<td>" . $results['dueDate'] . "</td>";
                         echo "<td>" . $results['fee'] . "</td>";
                     ?>
-                        <td><a href="Php/Pay_Due.php?userId=<?php echo $results['userId'] ?>&dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a></td>
+                        <td>
+                        <a href="Php/Pay_Due.php?userId=<?php echo $results['userId'] ?>&dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a>
+                        <a href="Transaction-Due-Detail-Admin.php?dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Details</button></a>
+                        </td>
                     <?php
                         echo "</tr></tbody>";
                       }
@@ -99,7 +102,10 @@
                         echo "<td>" . $results['expenseDetail'] . "</td>";
                         echo "<td>" . $results['expenseDate'] . "</td>";
                         echo "<td>" . $results['fee'] . "</td>"; ?>
-                        <td><a href="Php/Delete-Expense.php?expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a></td>
+                        <td>
+                        <a href="Php/Delete-Expense.php?userId=<?php echo $results['userId'] ?>&expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a>
+                        <a href="Transaction-Expense-Detail-Admin.php?expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Details</button></a>
+                        </td>
                     <?php
                         echo "</tr></tbody>";
                       }
