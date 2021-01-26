@@ -26,10 +26,9 @@
               <div style="background-color: white; margin-top: 3%; padding:2%" class="col-11">
                 <div style=" box-shadow: 5px 10px 15px #888888; margin-bottom:3%" class="row justify-content-center">
                   <?php require("Php/Chart-Admin.php") ?>
-                  
                 </div>
                 <hr>
-                <div style="margin-top: 5%;" class="row justify-content-center">
+                <div style="margin: 3%;" class="row justify-content-center">
                   <div class="col-6">
                     <form action="Php/Add-Due.php" method="post">
                       <div class="form-group">
@@ -57,6 +56,59 @@
                     </form>
                   </div>
                 </div>
+
+                <div>
+                  <table class="table table-stripped">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Due-Expense Detail</th>
+                        <th scope="col">Due-Expense Date</th>
+                        <th scope="col">Fee</th>
+                        <th scope="col">#</th>
+                      </tr>
+                    </thead>
+
+                    <?php
+                    $result = mysqli_query($conn, "SELECT * FROM `dues`");
+
+                    if (mysqli_num_rows($result) > 0) {
+                      while ($results = mysqli_fetch_array($result)) {
+                        echo
+                        "<tbody> <tr> ";
+                        echo "<td> DUE </td>";
+                        echo "<td>" . $results['dueDetail'] . "</td>";
+                        echo "<td>" . $results['dueDate'] . "</td>";
+                        echo "<td>" . $results['fee'] . "</td>";
+                    ?>
+                        <td><a href="Php/Pay_Due.php?userId=<?php echo $results['userId'] ?>&dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a></td>
+                    <?php
+                        echo "</tr></tbody>";
+                      }
+                    }
+                    ?>
+
+                    <?php
+                    $result = mysqli_query($conn, "SELECT * FROM `expenses` ");
+
+                    if (mysqli_num_rows($result) > 0) {
+                      while ($results = mysqli_fetch_array($result)) {
+                        echo
+                        "<tbody> <tr> ";
+                        echo "<td> EXPENSE </td>";
+                        echo "<td>" . $results['expenseDetail'] . "</td>";
+                        echo "<td>" . $results['expenseDate'] . "</td>";
+                        echo "<td>" . $results['fee'] . "</td>"; ?>
+                        <td><a href="Php/Delete-Expense.php?expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a></td>
+                    <?php
+                        echo "</tr></tbody>";
+                      }
+                    }
+                    ?>
+                    <hr>
+                  </table>
+                </div>
+
               </div>
             </div>
           </div>
