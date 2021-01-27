@@ -34,7 +34,7 @@
             </thead>
 
             <?php
-            $result = mysqli_query($conn, "SELECT * FROM announcement ORDER BY announce DESC");
+            $result = mysqli_query($conn, "SELECT * FROM announcement ORDER BY id DESC ");
             if (mysqli_num_rows($result) > 0) {
               while ($results = mysqli_fetch_array($result)) {
                 echo

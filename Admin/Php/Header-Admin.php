@@ -25,7 +25,8 @@ body {
           <a class="nav-link" href="Register-Admin.php">Register User</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Transaction-Admin.php">Expenses and Dues</a>
+        
+          <a class="nav-link" href="Transaction-Admin.php?currentDate=<?php echo date('Y-m-d') ?>">Expenses and Dues</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../Login.php">Log-Out</a>

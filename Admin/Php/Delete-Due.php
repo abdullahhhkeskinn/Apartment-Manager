@@ -3,5 +3,6 @@
 
     $dueId=$_GET['dueId'];
     $deleteQuery = mysqli_query($conn, "DELETE FROM dues WHERE dueId = '$dueId' ");
-    header("location: ../Transaction-Admin.php");  
+    $date = date('Y-m-d');
+    header("location: ../Transaction-Admin.php?currentDate=$date");  
 ?>

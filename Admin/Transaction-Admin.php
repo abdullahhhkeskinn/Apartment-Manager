@@ -25,7 +25,9 @@
             <div class="row justify-content-center">
               <div style="background-color: white; margin-top: 3%; padding:2%" class="col-11">
                 <div style=" box-shadow: 5px 10px 15px #888888; margin-bottom:3%" class="row justify-content-center">
-                  <?php require("Php/Chart-Admin.php") ?>
+                  <div  style="margin:2%" class="col-11">
+                    <?php require("Php/Chart-Admin.php") ?>
+                  </div>
                 </div>
                 <hr>
                 <div style="margin: 3%;" class="row justify-content-center">
@@ -70,7 +72,7 @@
                     </thead>
 
                     <?php
-                    $result = mysqli_query($conn, "SELECT * FROM `dues`");
+                    $result = mysqli_query($conn, "SELECT * FROM `dues` ORDER BY dueId DESC");
 
                     if (mysqli_num_rows($result) > 0) {
                       while ($results = mysqli_fetch_array($result)) {
@@ -82,7 +84,7 @@
                         echo "<td>" . $results['fee'] . "</td>";
                     ?>
                         <td>
-                        <a href="Php/Pay_Due.php?userId=<?php echo $results['userId'] ?>&dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a>
+                        <a href="Php/Delete-Due.php?dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a>
                         <a href="Transaction-Due-Detail-Admin.php?dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Details</button></a>
                         </td>
                     <?php
@@ -92,7 +94,7 @@
                     ?>
 
                     <?php
-                    $result = mysqli_query($conn, "SELECT * FROM `expenses` ");
+                    $result = mysqli_query($conn, "SELECT * FROM `expenses` ORDER BY expenseId DESC");
 
                     if (mysqli_num_rows($result) > 0) {
                       while ($results = mysqli_fetch_array($result)) {
@@ -103,7 +105,7 @@
                         echo "<td>" . $results['expenseDate'] . "</td>";
                         echo "<td>" . $results['fee'] . "</td>"; ?>
                         <td>
-                        <a href="Php/Delete-Expense.php?userId=<?php echo $results['userId'] ?>&expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a>
+                        <a href="Php/Delete-Expense.php?expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a>
                         <a href="Transaction-Expense-Detail-Admin.php?expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Details</button></a>
                         </td>
                     <?php
