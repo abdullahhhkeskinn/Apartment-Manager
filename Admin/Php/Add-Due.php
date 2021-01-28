@@ -18,7 +18,7 @@ if (isset($_POST['dueSubmit'])) {
                     mysqli_query($conn, "INSERT INTO `due_user_flat`(`userId`, `dueId`) VALUES ('$b','$dueId')");
                 }
                 if (1) {
-                    $_SESSION['errorMessage'] = "Monthly Due has been added to all flats";
+                    $_SESSION['confirmationMessage'] = "Monthly Due has been added to all flats";
                     $date = date('Y-m-d');
                     header("location: ../Transaction-Admin.php?currentDate=$date");
                 }

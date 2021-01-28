@@ -44,7 +44,7 @@
                             <div class="card-body">
                                 <div class="row justify-content-around">
                                     <div style="background-color: white;  padding:3%" class="col-10">
-                                        <form style="margin-left:30%" method="post" action="Php/Register-User.php">
+                                        <form style="margin-left:30%" method="post" action="Php/Update-User.php">
                                             <div class="form-row">
 
                                                 <div class="col-7">
@@ -97,6 +97,7 @@
                                                 <div class="col-7">
                                                     <label for="admin">Admin Status</label>
                                                     <input type="number" class="form-control" name="admin" placeholder="0 for normal user 1 for Admin" min="0" max="1" value="<?php echo $results['isAdmin'] ?>" required>
+                                                    <input type="number" style="display:none;" class="form-control" name="userId" value="<?php echo $results['userId'] ?>" required>
                                                 </div>
                                             </div>
                                             <hr>

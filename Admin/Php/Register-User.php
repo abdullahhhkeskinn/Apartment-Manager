@@ -19,10 +19,13 @@ if(isset($_POST['userSubmit'])){
         echo "<script type='text/javascript'>alert('This username is already taken');</script>";
         echo("<script>window.location ='../Register-Admin.php';</script>");
     } else {
-        $sql =  "INSERT INTO users (fname,surname,dob,ssn,username,pass,mail,phoneNo,flatNo,isAdmin) 
-                VALUES('$name','$surname','$dob','$username','$md5_password','$email','$phoneNumber','$admin')";
+        $sql =  "INSERT INTO users(`fname`, `surname`, `dob`, `username`, `pass`, `mail`, `phoneNo`, `isAdmin`) VALUES ('$name','$surname','$dob',
+        '$username','$md5_password','$email','$phoneNumber','$admin')";
 
         if (mysqli_query($conn, $sql)) {
+            $userIdArr = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM users WHERE userId=(SELECT max(userId) FROM users)"));
+            $userId = $userIdArr['userId'];
+            mysqli_query($conn,"INSERT INTO user_flat(`userId`, `apartmentNum`) VALUES ('$userId','$apartmentNo')");
             echo "<script type='text/javascript'>alert('User Succesfully Created');</script>";
             echo("<script>window.location ='../Register-Admin.php';</script>");
             
