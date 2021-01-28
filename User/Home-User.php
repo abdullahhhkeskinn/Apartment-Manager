@@ -13,14 +13,14 @@
 <body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <?php require("Php/Header-User.php") ?>
+  <?php require("Php/Header-Admin.php") ?>
 
   <div class="container-fluid">
     <div class="row justify-content-around">
       <div class="col-1"> </div>
       <div style="background-color: rgb(201, 181, 212); height: 100%; padding-bottom: 3%;" class="col-10">
 
-        <div style="margin-top: 3%;" class="jumbotron">
+        <div style=" box-shadow: 5px 10px 15px #888888; margin:3%" class="jumbotron">
           <h1 class="display-4">Welcome to Our Apartment System</h1>
           <p class="lead">You can see all the announcements here </p>
           <hr class="my-4">
@@ -29,12 +29,12 @@
               <tr>
                 <th scope="col">Announcement</th>
                 <th scope="col">Announcement Date</th>
-                <th scope="col">#</th>
+                <th scope="col">Announcer</th>
               </tr>
             </thead>
 
             <?php
-            $result = mysqli_query($conn, "SELECT * FROM announcement ORDER BY announce DESC");
+            $result = mysqli_query($conn, "SELECT * FROM announcement ORDER BY id DESC ");
             if (mysqli_num_rows($result) > 0) {
               while ($results = mysqli_fetch_array($result)) {
                 echo
@@ -42,9 +42,7 @@
                     <tr> ";
                 echo "<td>" . $results['announce'] . "</td>";
                 echo "<td>" . $results['announceDate'] . "</td>";
-            ?>
-                
-            <?php
+                echo "<td>ADMIN</td>";
                 echo "</tr>
                   </tbody>";
               }
