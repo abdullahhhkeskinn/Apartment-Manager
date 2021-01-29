@@ -37,14 +37,17 @@
           $results = mysqli_fetch_array($result);
           $userId = $results['userId'];
           $flatNo = $results['flatNo'];
+          $_SESSION['isAdmin'] = $results['isAdmin'];
           $_SESSION["userId"] = $userId;
           $_SESSION["flatNo"] = $flatNo;
           if ($results['isAdmin'] == 1) {
 
             header("Location: Admin/Home-Admin.php");
+            
             exit();
           } else {
             header("Location: User/Home-User.php");
+            
             exit();
           }
         } else {

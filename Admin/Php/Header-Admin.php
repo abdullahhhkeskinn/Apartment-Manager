@@ -10,6 +10,7 @@
   }
 </style>
 
+
 <?php
 if (isset($_SESSION['errorMessage'])) { ?>
   <script type='text/javascript'>
@@ -52,7 +53,7 @@ if (isset($_SESSION['confirmationMessage'])) { ?>
         <a class="nav-link" href="Transaction-Admin.php?currentDate=<?php echo date('Y-m-d') ?>">Expenses and Dues</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../Login.php">Log-Out</a>
+        <a class="nav-link" href="Log-out.php">Log-Out</a>
       </li>
     </ul>
   </div>

@@ -10,7 +10,6 @@
   }
 </style>
 
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="Home-User.php"><img src="../Css/logo.png" width="50" height="50" alt="Oops.."></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +28,7 @@
         <a class="nav-link" href="Payment-User.php">Payments</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../Login.php">Log-Out</a>
+        <a class="nav-link" href="Log-out.php">Log-Out</a>
       </li>
     </ul>
   </div>
