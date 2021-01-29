@@ -23,7 +23,7 @@ if (isset($_POST['userSubmit'])) {
         if (mysqli_query($conn, $sql)) {
             if(mysqli_query($conn, $sql2)){
                 echo "<script type='text/javascript'>alert('User Succesfully Updated');</script>";
-                echo ("<script>window.location ='../Register-Admin.php';</script>"); 
+                echo ("<script>window.location ='../Update-User.php';</script>"); 
             }
             else
             echo "a";
