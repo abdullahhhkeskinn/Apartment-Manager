@@ -28,8 +28,28 @@
         <div class="row justify-content-around">
             <div class="col-1"> </div>
             <div style="background-color: rgb(201, 181, 212); height: 100%; padding-bottom: 3%;" class="col-10">
+
                 <div style="margin-top: 3%;" id="accordion">
-                    
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Monthly Revenues And Expenses
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="row justify-content-around">
+                                    <div style="background-color: white; margin-top: 2%; padding:3%" class="col-11">
+                                       <?php require("Php/Chart-Admin.php") ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="card">
                         <div class="card-header" id="headingTwo">
@@ -39,7 +59,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseTwo" class="collapse-show" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="card-body">
                                 <div class="row justify-content-around">
                                     <div style="background-color: white; margin-top: 2%; padding:3%" class="col-10">
@@ -148,7 +168,7 @@
                                                     echo "<td> EXPENSE </td>";
                                                     echo "<td>" . $results['expenseDetail'] . "</td>";
                                                     echo "<td>" . $results['expenseDate'] . "</td>";
-                                                    echo "<td>" . $results['fee'] . "</td>"; 
+                                                    echo "<td>" . $results['fee'] . "</td>";
                                                     echo "<td>" . $results['pay_date'] . "</td>";
                                                     echo "</tr></tbody>";
                                                 }

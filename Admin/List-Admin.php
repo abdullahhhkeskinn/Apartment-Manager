@@ -114,14 +114,13 @@
                           <th scope="col">Date of Birth</th>
                           <th scope="col">Mail</th>
                           <th scope="col">Phone Number</th>
-                          <th scope="col">Flat Number</th>
                           <th scope="col">Move-In Date</th>
                           <th scope="col">Move-Out Date</th>
                         </tr>
                       </thead>
 
                       <?php
-                      $result = mysqli_query($conn, "SELECT * FROM `users` INNER JOIN user_flat USING (userId) WHERE isMoved = 1");
+                      $result = mysqli_query($conn, "SELECT * FROM `users` WHERE isMoved = 1");
 
                       if (mysqli_num_rows($result) > 0) {
                         while ($results = mysqli_fetch_array($result)) {
@@ -134,7 +133,6 @@
                           echo "<td>" . $results['dob'] . "</td>";
                           echo "<td>" . $results['mail'] . "</td>";
                           echo "<td>" . $results['phoneNo'] . "</td>";
-                          echo "<td>" . $results['apartmentNum'] . "</td>";
                           echo "<td>" . $results['moveInDate'] . "</td>";
                           echo "<td>" . $results['moveOutDate'] . "</td>";
                           echo "</tr>
