@@ -35,7 +35,7 @@
                     <form action="Php/Add-Due.php" method="post">
                       <div class="form-group">
                         <label for="fee">Monthly Due</label>
-                        <input type="number" name="due" class="form-control" placeholder="Due value of an flat" aria-label="due" aria-describedby="basic-addon1" min="1">
+                        <input type="number" name="due" class="form-control" placeholder="Please Enter the Fee As Per Flat" aria-label="due" aria-describedby="basic-addon1" min="1">
                       </div>
                       <div class="form-group">
                         <label for="AnnouncementTextArea">Due Details</label>
@@ -48,7 +48,7 @@
                     <form action="Php/Add-Expense.php" method="post">
                       <div class="form-group">
                         <label for="fee">Expense</label>
-                        <input type="number" name="expense" class="form-control" placeholder="Expense price per person" aria-label="due" aria-describedby="basic-addon1" min="1">
+                        <input type="number" name="expense" class="form-control" placeholder="Please Enter The Full Fee Of Expense" aria-label="due" aria-describedby="basic-addon1" min="1">
                       </div>
                       <div class="form-group">
                         <label for="AnnouncementTextArea">Expense Details</label>
