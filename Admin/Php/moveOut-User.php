@@ -11,7 +11,8 @@
             echo("<script>window.location ='../List-Admin.php';</script>");
         }else{
             if(mysqli_query($conn, "UPDATE users SET isMoved = 1 , moveOutDate = CURRENT_DATE() WHERE userId = '$userId' ")){
-                    header("location: ../List-Admin.php");
+                mysqli_query($conn, "DELETE FROM `user_flat` WHERE userId = '$userId' ");
+                header("location: ../List-Admin.php");
             }
         }
     }    

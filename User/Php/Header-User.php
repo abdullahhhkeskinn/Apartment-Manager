@@ -31,6 +31,20 @@
         <a class="nav-link" href="Log-out.php">Log-Out</a>
       </li>
     </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-text">
+        <?php 
+          echo $_SESSION['fname'];
+          echo " ";
+          echo $_SESSION['lname'];
+          echo " ";
+          ?>
+          <br>
+          <?php
+          echo date("F j, Y, g:i a") ;
+        ?>
+      </li>
+    </ul>
   </div>
 </nav>
 

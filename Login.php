@@ -37,6 +37,10 @@
           $results = mysqli_fetch_array($result);
           $userId = $results['userId'];
           $flatNo = $results['flatNo'];
+          $fname = $results['fname'];
+          $lname = $results['surname'];
+          $_SESSION['fname'] = $fname;
+          $_SESSION['lname'] = $lname;
           $_SESSION['isAdmin'] = $results['isAdmin'];
           $_SESSION["userId"] = $userId;
           $_SESSION["flatNo"] = $flatNo;

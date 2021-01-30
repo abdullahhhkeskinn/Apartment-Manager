@@ -38,7 +38,7 @@
             if (mysqli_num_rows($result) > 0) {
               while ($results = mysqli_fetch_array($result)) {
                 echo
-                  "<tbody>
+                "<tbody>
                     <tr> ";
                 echo "<td>" . $results['announce'] . "</td>";
                 echo "<td>" . $results['announceDate'] . "</td>";
@@ -53,20 +53,27 @@
           </table>
         </div>
 
-        <form action="Php/Add-Announcement.php" method="POST">
-          <div class="container">
-            <div class="row">
-              <div class="col-6"></div>
-              <div class="col-5">
+        <div class="container">
+          <form action="Php/Add-Announcement.php" method="POST">
+            <div class="col-5">
+              <div class="row">
                 <div class="form-group">
-                  <label for="AnnouncementTextArea">New Announcement</label>
-                  <textarea name="textArea"  cols="40" rows="8"></textarea>
+                  <label for="AnnouncementTextArea" style="text-align: left;">New Announcement</label>
+                  <textarea style=" box-shadow: 5px 10px 15px #888888; margin:3%" name="textArea" cols="60" rows="8"></textarea>
                 </div>
-                <button style="padding: 3%;" class="btn btn-primary" name="AnnouncementADD" type="submit">Announce</button>
+              </div>
+              <div class="row ">
+                <div class="col-12">
+                  <div>
+                    <button style="padding: 3%;" class="btn btn-primary" name="AnnouncementADD" type="submit">Announce</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </form>
+            <div class="col-7"></div>
+          </form>
+        </div>
+
       </div>
       <div class="col-1"> </div>
     </div>
