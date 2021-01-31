@@ -88,13 +88,7 @@
                                                 </div>
 
                                                 <div class="col-7">
-                                                    <label for="flatNo">Flat Number</label>
-                                                    <input type="number" class="form-control" name="flatNo" placeholder="Flat Number" min="1" max="10" value="<?php echo $results['apartmentNum'] ?>" required>
-                                                </div>
-
-                                                <div class="col-7">
-                                                    <label for="admin">Admin Status</label>
-                                                    <input type="number" class="form-control" name="admin" placeholder="0 for normal user 1 for Admin" min="0" max="1" value="<?php echo $results['isAdmin'] ?>" required>
+                                                    
                                                     <input type="number" style="display:none;" class="form-control" name="userId" value="<?php echo $results['userId'] ?>" required>
                                                 </div>
                                             </div>
