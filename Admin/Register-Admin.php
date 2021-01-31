@@ -80,7 +80,7 @@
 
                           <div class="col-7">
                             <label for="phoneNum">Phone Number</label>
-                            <input type="tel" class="form-control" name="phoneNum" placeholder="Phone Number" maxlength="11" required>
+                            <input type="number" class="form-control" name="phoneNum" placeholder="Phone Number" required>
                           </div>
 
                           <div class="col-7">
