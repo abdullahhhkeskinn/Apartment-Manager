@@ -66,7 +66,7 @@
                         <th scope="col">Type</th>
                         <th scope="col">Due-Expense Detail</th>
                         <th scope="col">Due-Expense Date</th>
-                        <th scope="col">Fee</th>
+                        <th scope="col">Fee Per Flat</th>
                         <th scope="col">#</th>
                       </tr>
                     </thead>
