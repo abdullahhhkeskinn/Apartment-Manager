@@ -84,7 +84,7 @@
                         echo "<td>" . $results['fee'] . "</td>";
                     ?>
                         <td>
-                        <a href="Php/Delete-Due.php?dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a>
+                        <a href="Php/Delete-Due.php?dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-danger'>Delete</button></a>
                         <a href="Transaction-Due-Detail-Admin.php?dueId=<?php echo $results['dueId'] ?>"><button type='button' class='btn btn-primary'>Details</button></a>
                         </td>
                     <?php
@@ -105,7 +105,7 @@
                         echo "<td>" . $results['expenseDate'] . "</td>";
                         echo "<td>" . $results['fee'] . "</td>"; ?>
                         <td>
-                        <a href="Php/Delete-Expense.php?expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Delete</button></a>
+                        <a href="Php/Delete-Expense.php?expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-danger'>Delete</button></a>
                         <a href="Transaction-Expense-Detail-Admin.php?expenseId=<?php echo $results['expenseId'] ?>"><button type='button' class='btn btn-primary'>Details</button></a>
                         </td>
                     <?php
