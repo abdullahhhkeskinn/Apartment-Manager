@@ -34,6 +34,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-text">
         <?php 
+        echo "USER: ";
           echo $_SESSION['fname'];
           echo " ";
           echo $_SESSION['lname'];

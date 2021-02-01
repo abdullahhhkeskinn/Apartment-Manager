@@ -59,6 +59,7 @@ if (isset($_SESSION['confirmationMessage'])) { ?>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-text">
         <?php 
+          echo "ADMIN: ";
           echo $_SESSION['fname'];
           echo " ";
           echo $_SESSION['lname'];
