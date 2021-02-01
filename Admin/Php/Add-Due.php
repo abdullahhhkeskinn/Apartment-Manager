@@ -14,8 +14,10 @@ if (isset($_POST['dueSubmit'])) {
                 $dueId = $dueIdArr['dueId'];
                 $result = mysqli_query($conn, $sql);
                 while ($results = mysqli_fetch_array($result)) {
-                    $b = $results['userId'];
-                    mysqli_query($conn, "INSERT INTO `due_user_flat`(`userId`, `dueId`) VALUES ('$b','$dueId')");
+                    if ($results['isMoved'] == 0) {
+                        $b = $results['userId'];
+                        mysqli_query($conn, "INSERT INTO `due_user_flat`(`userId`, `dueId`) VALUES ('$b','$dueId')");
+                    }
                 }
                 if (1) {
                     $_SESSION['confirmationMessage'] = "Monthly Due has been added to all flats";
